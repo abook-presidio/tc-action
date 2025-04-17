@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout/@V3
 
       - name: "test plugin"
-        uses: abook-presidio/scan-sign@alpha9
+        uses: abook-presidio/scan-sign@alpha10
         with:
           # variables to pass
           CLOUD: "AWS"
