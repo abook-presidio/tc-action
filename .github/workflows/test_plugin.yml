@@ -25,7 +25,7 @@ jobs:
         shell: bash 
     steps:
       - name: "test plugin"
-        uses: abook-presidio/scan-sign@alpha4
+        uses: abook-presidio/scan-sign@alpha5
         with:
           # variables to pass
           CLOUD: "AWS"
