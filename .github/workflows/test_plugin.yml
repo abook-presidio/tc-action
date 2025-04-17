@@ -14,14 +14,15 @@ on:
         type: string
 
 jobs:
-  build: "Build and scan with Wiz"
-  runs-on: ubuntu-latest
-  env: 
-    SCAN_PATH: "."
-    POLICY: "Default vulnerabilities policy"
-  defaults:
-    run:
-      shell: bash 
+  build: 
+    name: "Build and scan with Wiz"
+    runs-on: ubuntu-latest
+    env: 
+      SCAN_PATH: "."
+      POLICY: "Default vulnerabilities policy"
+    defaults:
+      run:
+        shell: bash 
     steps:
       - name: "test plugin"
         uses: abook-presidio/scan-sign@alpha1
