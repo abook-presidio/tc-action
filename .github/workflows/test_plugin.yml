@@ -1,0 +1,34 @@
+name: test_plugin
+env: 
+  owner: abook-presidio
+on:
+  workflow_dispatch:
+    inputs:
+      aws_region:
+        description: Target AWS Region
+        default: "us-east-1"
+        type: string
+      aws_account_id:
+        description: AWS Account ID 
+        default: "182968331794"
+        type: string
+
+jobs:
+  build: "Build and scan with Wiz"
+  runs-on: ubuntu-latest
+  env: 
+    SCAN_PATH: "."
+    POLICY: "Default vulnerabilities policy"
+  defaults:
+    run:
+      shell: bash 
+    steps:
+      - name: "test plugin"
+        uses: abook-presidio/scan-sign@alpha1
+        with:
+          # variables to pass
+          CLOUD: "AWS"
+          WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
+          WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
+
+
