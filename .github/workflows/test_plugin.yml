@@ -28,10 +28,11 @@ jobs:
         uses: actions/checkout/@V3
 
       - name: "test plugin"
-        uses: abook-presidio/scan-sign@alpha10
+        uses: abook-presidio/scan-sign@alpha11
         with:
           # variables to pass
           CLOUD: "AWS"
+          ACCOUNT: "182968331794"
           WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
           WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
 
